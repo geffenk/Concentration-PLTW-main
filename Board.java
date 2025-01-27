@@ -26,14 +26,14 @@ public class Board
   public Board()
   {
 
-   /*int index = 0;
+   int index = 0;
    for (int i=0; i<gameboard.length; i++){
     for (int j=0; j<gameboard[i].length; j++){
       gameboard[i][j] = new Tile(tileValues[index]);
       index++;
     }
    }
-    */
+    
   }
 
  /** 
@@ -48,7 +48,12 @@ public class Board
   public String toString()
   {
  
-    /* your code here */
+    String result = "";
+    for (int i=0; i<gameboard.length; i++){
+      for (int j=0; j<gameboard[i].length; i++){
+        
+      }
+    }
  
     return "";
   }
