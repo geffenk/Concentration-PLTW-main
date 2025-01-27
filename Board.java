@@ -10,12 +10,12 @@
  */
 public class Board
 {  
-  private static String[] tileValues = {"lion", "lion",
-                                        "penguin", "penguin",
-                                        "dolphin", "dolphin",
-                                        "fox", "fox",
-                                        "monkey", "monkey",
-                                        "turtle", "turtle"}; 
+  private static String[] tileValues = {"fire", "fire",
+                                        "water", "water",
+                                        "grass", "grass",
+                                        "earth", "earth",
+                                        "sky", "sky",
+                                        "magic", "magic"}; 
   private Tile[][] gameboard = new Tile[3][4];
 
   /**  
