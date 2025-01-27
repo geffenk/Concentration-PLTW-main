@@ -25,9 +25,15 @@ public class Board
    */
   public Board()
   {
-   
-    /* your code here */ 
 
+   /*int index = 0;
+   for (int i=0; i<gameboard.length; i++){
+    for (int j=0; j<gameboard[i].length; j++){
+      gameboard[i][j] = new Tile(tileValues[index]);
+      index++;
+    }
+   }
+    */
   }
 
  /** 
