@@ -51,11 +51,17 @@ public class Board
     String result = "";
     for (int i=0; i<gameboard.length; i++){
       for (int j=0; j<gameboard[i].length; i++){
-        
+        if (!gameboard[i][j].isShowingValue() && !gameboard[i][j].matched()){
+          result += gameboard[i][j].getHidden() + " ";
+        }
+        else if (!gameboard[i][j].isShowingValue()){
+          result += "matched ";
+        }
+        else result += gameboard[i][j].getValue();
       }
     }
  
-    return "";
+    return result;
   }
 
   /** 
@@ -69,7 +75,13 @@ public class Board
   public boolean allTilesMatch()
   {
 
-    /* your code  here */
+    for (Tile[] x: gameboard){
+      for (Tile y: x){
+        if(!y.matched()){
+          return false;
+        }
+      }
+    }
     
     return true;
   }
@@ -87,8 +99,7 @@ public class Board
    */
   public void showValue (int row, int column)
   {
-   
-    /* your code here */
+    gameboard[row][column].show();
   }  
 
   /** 
@@ -112,7 +123,16 @@ public class Board
   {
     String msg = "";
 
-     /* your code here */
+     if (gameboard[row1][col1].getValue().equals(gameboard[row2][col2].getValue())){
+        msg += "The tiles match";
+        gameboard[row1][col1].foundMatch();
+        gameboard[row2][col2].foundMatch();
+     }
+     else{
+        msg += "The tiles do not match";
+        gameboard[row1][col1].hide();
+        gameboard[row2][col2].hide();
+     }
     
      return msg;
   }
@@ -128,7 +148,12 @@ public class Board
   public boolean validateSelection(int row, int col)
   {
 
-    /* your code here */
+    if (row >= gameboard.length || col >= gameboard[0].length){
+      return false;
+    }
+    else if (gameboard[row][col].matched()){
+      return false;
+    }
 
     return true;
   }
