@@ -50,7 +50,7 @@ public class Board
  
     String result = "";
     for (int i=0; i<gameboard.length; i++){
-      for (int j=0; j<gameboard[i].length; i++){
+      for (int j=0; j<gameboard[i].length; j++){
         if (!gameboard[i][j].isShowingValue() && !gameboard[i][j].matched()){
           result += gameboard[i][j].getHidden() + " ";
         }
@@ -59,6 +59,7 @@ public class Board
         }
         else result += gameboard[i][j].getValue();
       }
+      result += "\n";
     }
  
     return result;
